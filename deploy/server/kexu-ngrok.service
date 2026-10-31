@@ -1,0 +1,18 @@
+[Unit]
+Description=Kexu fixed HTTPS endpoint
+After=network-online.target nginx.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+DynamicUser=true
+EnvironmentFile=/etc/kexu/ngrok.env
+ExecStart=/usr/local/bin/ngrok start kexu --config /opt/kexu/ngrok.yml
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

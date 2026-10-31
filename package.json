@@ -1,0 +1,50 @@
+{
+  "name": "campus-timetable",
+  "version": "0.1.0",
+  "main": "expo-router/entry",
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~57.0.29",
+    "expo-constants": "~57.0.22",
+    "expo-dev-client": "~57.0.20",
+    "expo-linking": "~57.0.13",
+    "expo-notifications": "~57.0.23",
+    "expo-router": "~57.0.27",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-web": "^0.21.2",
+    "react-native-webview": "13.16.1",
+    "react-native-worklets": "0.10.1",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "~19.2.2",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~57.0.2",
+    "linkedom": "^0.18.13",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "lint": "expo lint",
+    "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
+    "export:ios": "expo export --platform ios",
+    "export:web": "expo export --platform web",
+    "build:server": "npm run export:web && node scripts/build-server.mjs",
+    "build:edgeone": "npm run export:web && node scripts/build-edgeone.mjs",
+    "build:ios": "npx eas-cli@latest build --platform ios --profile preview"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

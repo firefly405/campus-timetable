@@ -1,0 +1,19 @@
+{
+  "cli": { "version": ">= 18.0.0", "appVersionSource": "remote" },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": { "ALLOW_SCHOOL_HTTP": "true" }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": { "ALLOW_SCHOOL_HTTP": "true" }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": { "ALLOW_SCHOOL_HTTP": "false" }
+    }
+  },
+  "submit": { "production": {} }
+}

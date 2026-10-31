@@ -1,0 +1,9 @@
+node_modules
+.git
+.expo
+dist
+web-build
+tests
+docs
+*.zip
+.env*.local

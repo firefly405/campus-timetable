@@ -1,0 +1,24 @@
+[Unit]
+Description=Kexu school API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/kexu/app
+EnvironmentFile=/etc/kexu/env
+ExecStart=/usr/bin/node /opt/kexu/app/school.mjs
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+StateDirectory=kexu
+StateDirectoryMode=0700
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
